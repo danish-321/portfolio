@@ -20,18 +20,16 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="flex items-start" style={{ maxWidth: 1000 }}>
+      <div className="flex items-start mx-10" style={{ maxWidth: 800 }}>
         <ProjectCard
           title={"Todoser"}
           summary={
             "Todoser is a web app that companies can use to organize their calendars and tasks. Made using React, Express, MongoDB, Node, Framer Motion, Tailwindcss, etc."
           }
           website={"https://todoser-ehhk3.ondigitalocean.app/"}
-          picture={
-            "https://raw.githubusercontent.com/danish-321/todoser/main/readme/todo-screenshot.png?token=AUC3AWZ5TMGMPHPYQEPCFGTAWKSVA"
-          }
+          picture={"https://i.ibb.co/5j81L5K/todo-screenshot.png"}
         />
-        <ProjectCard />
+        {/* <ProjectCard /> */}
       </div>
     </div>
   );

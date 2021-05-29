@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
   const [name, setName] = useState();
@@ -61,7 +62,23 @@ const Contact = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-          <div className="bg-black flex items-center justify-center border-gray-800 border p-3 text-gray-300 w-full  text-xl hover:text-white hover:bg-gray-800 duration-150 cursor-pointer">
+          <div
+            className="bg-black flex items-center justify-center border-gray-800 border p-3 text-gray-300 w-full  text-xl hover:text-white hover:bg-gray-800 duration-150 cursor-pointer"
+            onClick={() => {
+              var formData = new FormData();
+              formData.append("email", email);
+              formData.append("name", name);
+              formData.append("subject", subject);
+              formData.append("message", message);
+
+              const headers = {
+                "Content-Type": "multipart/form-data",
+              };
+              axios.post("mailto:contact@danishanwer.com", formData, {
+                headers: headers,
+              });
+            }}
+          >
             Submit
           </div>
         </div>
@@ -71,7 +88,7 @@ const Contact = () => {
             <div className="font-bold text-sm uppercase text-white tracking-widest my-3">
               Email
             </div>
-            <div className="text-gray-300 ">email@email.com</div>
+            <div className="text-gray-300 ">contact@danishanwer.com</div>
           </div>
           <div className="my-10">
             <div className="font-bold text-sm uppercase text-white tracking-widest my-3">
@@ -84,74 +101,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="flex" style={{ maxWidth: 1500 }}>
-        <div className="w-full m-10 bg-white shadow-lg">
-          <div className="text-center">
-            <div className="w-full">
-              <div className="bg-black flex items-center border-gray-800 border p-3">
-                <div className="text-gray-300 text-xl mr-5 ">Name</div>
-                <input
-                  className="outline-none text-lg text-white bg-black"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-
-              <div className="bg-black flex items-center border-gray-800 border p-3">
-                <div className="text-gray-300 text-xl mr-5 ">Email</div>
-                <input
-                  className="outline-none text-lg text-white bg-black"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              <div className="bg-black flex items-center border-gray-800 border p-3">
-                <div className="text-gray-300 text-xl mr-5 ">Subject</div>
-                <input
-                  className="outline-none text-lg text-white bg-black"
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
-                />
-              </div>
-              <div className="bg-black flex items-center border-gray-800 border p-3">
-                <div className="text-gray-300 text-xl mr-5 ">Message</div>
-                <textarea
-                  className="outline-none text-lg text-white bg-black"
-                  rows="2"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="m-10 bg-white p-10 shadow-lg float-right "
-          style={{ width: 300 }}
-        >
-          <div className="text-center">
-            Todoser is a web app that companies can use to organize their
-            adsasda Framer Motion, Tailwindcss, etc.
-          </div>
-          <div className="my-10">
-            <div className="font-bold text-sm uppercase text-white tracking-widest my-3">
-              Email
-            </div>
-            <div className="text-gray-300 ">email@email.com</div>
-          </div>
-          <div className="my-10">
-            <div className="font-bold text-sm uppercase text-white tracking-widest my-3">
-              Address
-            </div>
-            <div>
-              <div className="text-gray-300 ">Toronto</div>
-              <div className="text-gray-300 ">Ontario, Canada</div>
-            </div>
-          </div>
-        </div>
-      </div>*/}
     </div>
   );
 };
