@@ -1,0 +1,43 @@
+.curve {
+  width: 100vw;
+  height: 100px;
+  border: solid 30px;
+  border-color: #6095db transparent transparent transparent;
+  border-radius: 100%/100px 100px 0 0;
+  transform: rotate(180deg);
+}
+
+.name {
+  font-family: "Lateef", cursive;
+}
+
+.btn-wipe-bot-up {
+  animation: out 0.25s ease-in-out;
+  color: white;
+}
+
+.btn-wipe-bot-up:hover {
+  animation: in 0.25s ease-in-out;
+  box-shadow: inset 0 50px 0 0 white;
+  color: #b19cd9;
+}
+@keyframes in {
+  from {
+    box-shadow: inset 0 0 0 0 white;
+    color: white;
+  }
+  to {
+    box-shadow: inset 0 -50px 0 0 white;
+    color: #b19cd9;
+  }
+}
+@keyframes out {
+  from {
+    box-shadow: inset 0 50px 0 0 white;
+    color: #b19cd9;
+  }
+  to {
+    box-shadow: inset 0 0 0 0 white;
+    color: white;
+  }
+}
