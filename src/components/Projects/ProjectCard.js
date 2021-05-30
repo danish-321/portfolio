@@ -3,7 +3,7 @@ import ProjectButton from "./ProjectButton";
 
 const ProjectCard = ({ title, summary, website, picture }) => {
   return (
-    <div className="w-full m-10 bg-white p-10 shadow-lg">
+    <div className="w-full m-10 bg-gray-100 p-10 shadow-lg hover:bg-white duration-150 ">
       <img src={picture} />
 
       <div className="font-bold text-black  text-xl text-center my-10">
