@@ -83,13 +83,16 @@ const NavigationBar = () => {
       className="fixed w-full"
     >
       <div
-        className={classNames("px-3  pb-3 flex items-center justify-between ")}
+        className={classNames(
+          "px-3  pb-3 flex items-center justify-between",
+          {}
+        )}
         style={{ zIndex: 100 }}
       >
         <motion.a
           variants={item}
           href="#home"
-          className="text-2xl font-medium mx-1 px-3 py-1 duration-150 cursor-pointer text-white rounded-md"
+          className="text-2xl z-50 font-medium mx-1 mt-3 px-3 py-1 duration-150 cursor-pointer text-white rounded-md"
         >
           DA
         </motion.a>
@@ -116,6 +119,7 @@ const NavigationBar = () => {
             variants={item}
             onClick={() => {
               setShowMenu(true);
+              setNavBackground(true);
               setShowMenuButton(false);
             }}
             className="w-10 h-10"
@@ -151,47 +155,64 @@ const NavigationBar = () => {
               },
             }}
             style={{ zIndex: -100 }}
-            className={classNames("w-screen h-10 bg-black absolute")}
+            className={classNames("w-screen bg-black absolute")}
           ></motion.div>
         </AnimatePresence>
       )}
-      {/* <OutsideAlerter
+
+      <OutsideAlerter
         display={() => {
           setShowMenu(false);
           setShowMenuButton(true);
+          setNavBackground(false);
         }}
       >
-        <div className="">
-          {showMenu && (
-            <div className="flex flex-col pb-1">
-              <NavigationLinkHover
-                linkName="home"
-                setShowMenu={setShowMenu}
-                setShowMenuButton={setShowMenuButton}
-              />
+        <div>
+          <AnimatePresence>
+            {showMenu && (
+              <motion.div
+                variants={container}
+                initial="hidden"
+                animate="show"
+                exit="exit"
+                className="bg-black w-full absolute top-0 pt-14 pl-6 flex flex-col pb-3"
+              >
+                <motion.div className="my-1" variants={item}>
+                  <NavigationLinkHover
+                    linkName="home"
+                    setShowMenu={setShowMenu}
+                    setShowMenuButton={setShowMenuButton}
+                  />
+                </motion.div>
 
-              <NavigationLinkHover
-                linkName="about"
-                setShowMenu={setShowMenu}
-                setShowMenuButton={setShowMenuButton}
-              />
+                <motion.div className="my-1" variants={item}>
+                  <NavigationLinkHover
+                    linkName="about"
+                    setShowMenu={setShowMenu}
+                    setShowMenuButton={setShowMenuButton}
+                  />
+                </motion.div>
 
-              <NavigationLinkHover
-                linkName="portfolio"
-                setShowMenu={setShowMenu}
-                setShowMenuButton={setShowMenuButton}
-              />
+                <motion.div className="my-1" variants={item}>
+                  <NavigationLinkHover
+                    linkName="portfolio"
+                    setShowMenu={setShowMenu}
+                    setShowMenuButton={setShowMenuButton}
+                  />
+                </motion.div>
 
-              <NavigationLinkHover
-                linkName="contact"
-                setShowMenu={setShowMenu}
-                setShowMenuButton={setShowMenuButton}
-              />
-            </div>
-          )}
+                <motion.div className="my-1" variants={item}>
+                  <NavigationLinkHover
+                    linkName="contact"
+                    setShowMenu={setShowMenu}
+                    setShowMenuButton={setShowMenuButton}
+                  />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </OutsideAlerter>
-     */}
     </motion.div>
   );
 };

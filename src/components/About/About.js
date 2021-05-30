@@ -54,11 +54,10 @@ const About = () => {
   const handleScroll = () => {
     let scrollY = window.scrollY;
 
-    if (window.innerHeight > 600)
-      if (scrollY > window.innerHeight) setShowAbout(true);
+    if (window.innerHeight > 600) if (scrollY > 0 + 300) setShowAbout(true);
 
     if (window.innerHeight < 600)
-      if (scrollY > 600 - window.innerHeight) setShowAbout(true);
+      if (scrollY > 600 - window.innerHeight - 10) setShowAbout(true);
   };
 
   let skills = ["html", "css", "javascript", "react", "redux", "tailwindcss"];
@@ -70,15 +69,17 @@ const About = () => {
   ));
 
   return (
-    <div id="about" style={{ minHeight: 600, maxHeight: 1000 }}>
+    <div
+      id="about"
+      className="h-screen flex flex-col items-center justify-evenly"
+      style={{ minHeight: 600, maxHeight: 1000 }}
+    >
       {showAbout && (
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
           exit="exit"
-          className="h-screen flex flex-col items-center justify-evenly"
-          style={{ minHeight: 600, maxHeight: 1000 }}
         >
           <div className="flex flex-col items-center justify-center">
             <motion.div

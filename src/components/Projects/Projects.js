@@ -55,23 +55,27 @@ const Projects = () => {
   const handleScroll = () => {
     let scrollY = window.scrollY;
 
-    if (window.innerHeight > 600)
-      if (scrollY > window.innerHeight * 2) setShowProjects(true);
+    console.log(scrollY, window.innerHeight);
 
-    if (window.innerHeight < 600)
-      if (scrollY > 600 + 600 - window.innerHeight) setShowProjects(true);
+    if (window.innerHeight < 600) if (scrollY > 600 - 10) setShowProjects(true);
+    if (window.innerHeight < 1000)
+      if (scrollY > window.innerHeight - 10) setShowProjects(true);
+    if (window.innerHeight > 1000)
+      if (scrollY > 1200 - 10) setShowProjects(true);
   };
 
   return (
-    <div id="portfolio" style={{ minHeight: 1000 }}>
+    <div
+      id="portfolio"
+      className="h-screen flex flex-col items-center justify-evenly"
+      style={{ backgroundColor: "#E7E7E8", minHeight: 1000, minHeight: 1000 }}
+    >
       {showProjects && (
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
           exit="exit"
-          className="h-screen flex flex-col items-center justify-evenly"
-          style={{ backgroundColor: "#E7E7E8", minHeight: 1000 }}
         >
           <div className="flex flex-col items-center justify-center">
             <motion.div
