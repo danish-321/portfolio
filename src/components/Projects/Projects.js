@@ -81,7 +81,7 @@ const Projects = () => {
           <div className="flex flex-col items-center justify-center">
             <motion.div
               variants={item}
-              className="mt-5 font-bold text-sm uppercase text-purple tracking-widest"
+              className="mt-10 font-bold text-sm uppercase text-purple tracking-widest"
             >
               Works
             </motion.div>

@@ -80,9 +80,9 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="exit"
-          className="flex flex-col justify-evenly h-screen"
+          className="flex flex-col justify-evenly items-center h-screen"
         >
-          <div className="mt-10 h-1/3 flex flex-col items-center justify-center">
+          <div className="mt-10 flex flex-col items-center justify-center">
             <motion.div
               variants={item}
               className="font-bold text-sm uppercase text-purple tracking-widest"
@@ -104,7 +104,7 @@ const About = () => {
           </div>
 
           <div
-            className="h-2/3 flex flex-col md:flex-row items-start"
+            className="flex flex-col md:flex-row items-start"
             style={{ maxWidth: 1000 }}
           >
             <div className="m-10 md:w-1/2">
