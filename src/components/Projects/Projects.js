@@ -57,18 +57,18 @@ const Projects = () => {
 
     console.log(scrollY, window.innerHeight);
 
-    if (window.innerHeight < 600) if (scrollY > 600 - 10) setShowProjects(true);
-    if (window.innerHeight < 1000)
-      if (scrollY > window.innerHeight - 10) setShowProjects(true);
-    if (window.innerHeight > 1000)
-      if (scrollY > 1200 - 10) setShowProjects(true);
+    if (window.innerHeight < 600)
+      if (scrollY > 600 - window.innerHeight + 800) setShowProjects(true);
+    if (window.innerHeight < 800) if (scrollY > 800) setShowProjects(true);
+    if (window.innerHeight >= 800)
+      if (scrollY > window.innerHeight + 10) setShowProjects(true);
   };
 
   return (
     <div
       id="portfolio"
       className="h-screen flex flex-col items-center justify-evenly"
-      style={{ backgroundColor: "#E7E7E8", minHeight: 1000, minHeight: 1000 }}
+      style={{ backgroundColor: "#E7E7E8", minHeight: 1000 }}
     >
       {showProjects && (
         <motion.div
@@ -76,11 +76,12 @@ const Projects = () => {
           initial="hidden"
           animate="show"
           exit="exit"
+          className="flex flex-col  justify-evenly h-screen"
         >
           <div className="flex flex-col items-center justify-center">
             <motion.div
               variants={item}
-              className="mt-10 font-bold text-sm uppercase text-purple tracking-widest"
+              className="mt-5 font-bold text-sm uppercase text-purple tracking-widest"
             >
               Works
             </motion.div>

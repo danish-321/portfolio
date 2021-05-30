@@ -54,7 +54,7 @@ const About = () => {
   const handleScroll = () => {
     let scrollY = window.scrollY;
 
-    if (window.innerHeight > 600) if (scrollY > 0 + 300) setShowAbout(true);
+    if (window.innerHeight > 600) if (scrollY > 10) setShowAbout(true);
 
     if (window.innerHeight < 600)
       if (scrollY > 600 - window.innerHeight - 10) setShowAbout(true);
@@ -71,8 +71,8 @@ const About = () => {
   return (
     <div
       id="about"
-      className="h-screen flex flex-col items-center justify-evenly"
-      style={{ minHeight: 600, maxHeight: 1000 }}
+      className="flex flex-col items-center justify-evenly h-screen"
+      style={{ minHeight: 800 }}
     >
       {showAbout && (
         <motion.div
@@ -80,11 +80,12 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="exit"
+          className="flex flex-col justify-evenly h-screen"
         >
-          <div className="flex flex-col items-center justify-center">
+          <div className="mt-10 h-1/3 flex flex-col items-center justify-center">
             <motion.div
               variants={item}
-              className="mt-10 font-bold text-sm uppercase text-purple tracking-widest"
+              className="font-bold text-sm uppercase text-purple tracking-widest"
             >
               About
             </motion.div>
@@ -102,8 +103,11 @@ const About = () => {
             </motion.div>
           </div>
 
-          <div className="flex items-start" style={{ maxWidth: 1000 }}>
-            <div className="w-full m-10">
+          <div
+            className="h-2/3 flex flex-col md:flex-row items-start"
+            style={{ maxWidth: 1000 }}
+          >
+            <div className="m-10 md:w-1/2">
               <motion.div
                 variants={item}
                 className="font-bold text-xl text-black tracking-wide"
@@ -122,7 +126,7 @@ const About = () => {
               </motion.div>
             </div>
 
-            <div className="w-full m-10">
+            <div className="m-10 md:w-1/2">
               <motion.div
                 variants={item}
                 className="font-bold text-xl text-black tracking-wide mb-3"

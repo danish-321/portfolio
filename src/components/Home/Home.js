@@ -66,8 +66,12 @@ const Home = () => {
     >
       <div className="w-full">
         <div>
-          <div className="flex flex-col sm:flex-row items-start  justify-evenly">
-            <div className="">
+          <div
+            className="flex flex-col md:flex-row md:items-start items-start  justify-center md:justify-around
+          mx-20 md:m-10
+          "
+          >
+            <div className="flex flex-col  items-baseline	 md:items-start	 md:justify-center mr-10">
               <div className="flex items-center mb-3">
                 <div className="w-8 bg-purple mr-3" style={{ height: 1 }}></div>
                 <motion.div
@@ -79,13 +83,13 @@ const Home = () => {
               </div>
               <motion.div
                 variants={item}
-                className=" my-1 text-white font-semibold text-3xl sm:text-5xl "
+                className=" my-1 text-white font-semibold text-3xl sm:text-5xl"
               >
                 I am Danish Anwer
               </motion.div>
               <motion.div
                 variants={item}
-                className="text-white font-semibold    text-3xl sm:text-5xl "
+                className="text-white font-semibold  text-3xl sm:text-5xl "
               >
                 I am a Web Developer
               </motion.div>
@@ -96,16 +100,16 @@ const Home = () => {
             </div>
             <motion.div
               variants={item}
-              className=" w-full sm:w-36 flex  flex-col items-center"
+              className="w-full md:w-72 flex  flex-col items-center"
             >
               <a
-                className=" w-3/5 sm:w-36 mt-16 m-1 h-12 flex items-center justify-center border-white border text-white font-medium text-sm uppercase btn-wipe-bot-up"
+                className="w-full mt-16 m-1 h-12 flex items-center justify-center border-white border text-white font-medium text-sm uppercase btn-wipe-bot-up"
                 href="#portfolio"
               >
                 Latest Projects
               </a>
               <a
-                className=" w-3/5  sm:w-36  m-1 h-12 flex items-center justify-center border-white border text-white font-medium text-sm uppercase btn-wipe-bot-up"
+                className="w-full m-1 h-12 flex items-center justify-center border-white border text-white font-medium text-sm uppercase btn-wipe-bot-up"
                 href="#about"
               >
                 More About Me
