@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import { email } from "./businexEmail.js";
-import { motion } from "framer-motion";
-import {useHistory} from 'react-router-dom'
+import { AnimatePresence, motion } from "framer-motion";
+import { useHistory } from 'react-router-dom'
 import { ReactComponent as LeftArrow } from './left-arrow.svg';
-
-
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -81,12 +79,8 @@ const Email = () => {
   };
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-    >
+
+    <AnimatePresence>
       <motion.div
         variants={container}
         initial="hidden"
@@ -101,7 +95,7 @@ const Email = () => {
         }}>
 
           <div style={{ width: 35, height: 35 }}
-            onClick={() =>  handleClick() }
+            onClick={() => handleClick()}
           >
             <LeftArrow />
           </div>
@@ -139,8 +133,8 @@ const Email = () => {
           ></div>
         </motion.div>
       </motion.div>
-    </motion.div>
-  );
+
+    </AnimatePresence>);
 };
 
 export default Email;
