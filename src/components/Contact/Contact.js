@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import emailjs from "emailjs-com";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Contact = () => {
@@ -198,15 +196,11 @@ const Contact = () => {
                     Body: message + " " + name,
                   });
 
-                  console.log(messageEmail);
-
                   if (messageEmail == "'From' property is required")
                     setFromRequired(true);
 
                   if (messageEmail == "'Subject' property is required")
                     setSubjectRequired(true);
-
-                  console.log(messageEmail.substring(0, 7));
 
                   if (messageEmail.substring(0, 7) == "Mailbox") {
                     setFromRequired(true);

@@ -4,26 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useHistory } from 'react-router-dom'
 import { ReactComponent as LeftArrow } from './left-arrow.svg';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
-  },
-  exit: {
-    opacity: 0,
-
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
-  },
-};
-
 const container = {
   hidden: { opacity: 0, y: -100 },
   show: {

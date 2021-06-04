@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import OutsideAlerter from "./OutsideAlerter";
 import NavigationLink from "./NavigationLink";
 import NavigationLinkHover from "./NavigationLinkHover";

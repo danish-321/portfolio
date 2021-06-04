@@ -55,8 +55,6 @@ const Projects = () => {
   const handleScroll = () => {
     let scrollY = window.scrollY;
 
-    console.log(scrollY, window.innerHeight);
-
     if (window.innerHeight < 600)
       if (scrollY > 600 - window.innerHeight + 800) setShowProjects(true);
     if (window.innerHeight < 800) if (scrollY > 800) setShowProjects(true);
