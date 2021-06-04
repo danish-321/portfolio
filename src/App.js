@@ -7,6 +7,8 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 
+import Email from "./Email/Email";
+
 function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,7 +16,8 @@ function App() {
 
   return (
     <div>
-      <LazyLoad once>
+      <Email />
+      {/* <LazyLoad once>
         <NavigationBar />
       </LazyLoad>
 
@@ -32,7 +35,7 @@ function App() {
 
       <LazyLoad once>
         <Contact />
-      </LazyLoad>
+      </LazyLoad> */}
 
       {/* <Portfolio /> */}
       {/* <Contact /> */}

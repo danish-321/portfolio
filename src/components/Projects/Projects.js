@@ -113,6 +113,17 @@ const Projects = () => {
               website={"https://todoser-ehhk3.ondigitalocean.app/"}
               picture={"https://i.ibb.co/5j81L5K/todo-screenshot.png"}
             />
+
+             {/* <ProjectCard /> */}
+             <ProjectCard
+              title={"BusineX Email"}
+              summary={
+                "BusineX Email is an HTML Email created using HTML and CSS."
+              }
+              website={""}
+              picture={"https://i.ibb.co/5j81L5K/todo-screenshot.png"}
+            />
+
           </motion.div>
         </motion.div>
       )}
