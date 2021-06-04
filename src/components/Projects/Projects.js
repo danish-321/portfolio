@@ -110,7 +110,7 @@ const Projects = () => {
               summary={
                 "Todoser is a web app that companies can use to organize their calendars and tasks. Made using React, Express, MongoDB, Node, Framer Motion, Tailwindcss, etc."
               }
-              website={"https://todoser-ehhk3.ondigitalocean.app/"}
+              website={"https://todoser.net/"}
               picture={"https://i.ibb.co/5j81L5K/todo-screenshot.png"}
             />
 

@@ -1,5 +1,5 @@
 import React from "react";
-import email from "./businexEmail.html";
+import { email } from "./businexEmail.js";
 
 const Email = () => {
   return (

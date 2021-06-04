@@ -15,32 +15,16 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Email />
-      {/* <LazyLoad once>
-        <NavigationBar />
-      </LazyLoad>
-
-      <LazyLoad once>
-        <Home />
-      </LazyLoad>
-
-      <LazyLoad once>
-        <About />
-      </LazyLoad>
-
-      <LazyLoad once>
-        <Projects />
-      </LazyLoad>
-
-      <LazyLoad once>
-        <Contact />
-      </LazyLoad> */}
-
-      {/* <Portfolio /> */}
-      {/* <Contact /> */}
-      {/* <Footer /> */}
-    </div>
+    
+       <Router >
+      <Route path = "/" component = {App}>
+         <IndexRoute component = {Home} />
+         <Route path = "home" component = {Home} />
+         <Route path = "about" component = {About} />
+         <Route path = "contact" component = {Contact} />
+      </Route>
+   </Router>
+     
   );
 }
 
