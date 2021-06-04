@@ -114,16 +114,16 @@ const Projects = () => {
               picture={"https://i.ibb.co/5j81L5K/todo-screenshot.png"}
             />
 
-             {/* <ProjectCard /> */}
-             <ProjectCard
+            {/* <ProjectCard /> */}
+            <ProjectCard
               title={"BusineX Email"}
               summary={
                 "BusineX Email is an HTML Email created using HTML and CSS."
               }
               website={""}
-              picture={"https://i.ibb.co/5j81L5K/todo-screenshot.png"}
+              link={true}
+              picture={"https://i.ibb.co/1LBDcRB/Busine-X-Email.png"}
             />
-
           </motion.div>
         </motion.div>
       )}

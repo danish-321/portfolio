@@ -1,30 +1,23 @@
 import React, { useEffect } from "react";
-import LazyLoad from "react-lazyload";
-
-import NavigationBar from "./components/NavigationBar/NavigationBar";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
-
+import { Switch, Route, useLocation } from "react-router-dom";
 import Email from "./Email/Email";
+import HomeApp from "./HomeApp";
+import { AnimatePresence } from "framer-motion";
+import NavigationBar from "./components/NavigationBar/NavigationBar";
 
 function App() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const location = useLocation();
 
   return (
-    
-       <Router >
-      <Route path = "/" component = {App}>
-         <IndexRoute component = {Home} />
-         <Route path = "home" component = {Home} />
-         <Route path = "about" component = {About} />
-         <Route path = "contact" component = {Contact} />
-      </Route>
-   </Router>
-     
+    <AnimatePresence>
+      <LazyLoad once>
+        <NavigationBar />
+      </LazyLoad>
+      <Switch location={location} key={location.key}>
+        <Route exact path="/" component={HomeApp} />
+        <Route exact path="/email" component={Email} />
+      </Switch>
+    </AnimatePresence>
   );
 }
 
