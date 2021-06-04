@@ -39,6 +39,11 @@ const HomeApp = () => {
       animate="show"
       exit="exit"
     >
+
+      <LazyLoad once>
+        <NavigationBar />
+      </LazyLoad>
+
       <LazyLoad once>
         <Home />
       </LazyLoad>

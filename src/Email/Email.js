@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { email } from "./businexEmail.js";
 import { motion } from "framer-motion";
+import {useHistory} from 'react-router-dom'
+import { ReactComponent as LeftArrow } from './left-arrow.svg';
+
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -70,6 +74,12 @@ const Email = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/");
+  };
+
   return (
     <motion.div
       variants={containerVariants}
@@ -85,25 +95,37 @@ const Email = () => {
         style={{ backgroundColor: "#E7E7E8" }}
         className="flex flex-col justify-evenly items-center"
       >
-        <div className="mt-10 flex flex-col items-center justify-center">
-          <motion.div
-            variants={item}
-            className="font-bold text-sm uppercase text-purple tracking-widest"
+        <div className="flex items-center justify-between" style={{
+          width:
+            '600px'
+        }}>
+
+          <div style={{ width: 35, height: 35 }}
+            onClick={() =>  handleClick() }
           >
-            Project
+            <LeftArrow />
+          </div>
+          <div className="mt-10 flex flex-col items-center justify-center" style={{ marginLeft: -35 }}>
+            <motion.div
+              variants={item}
+              className="font-bold text-sm uppercase text-purple tracking-widest"
+            >
+              Project
           </motion.div>
-          <motion.div
-            variants={item}
-            className="my-1 text-black font-semibold text-3xl sm:text-5xl"
-          >
-            BusineX Email
+            <motion.div
+              variants={item}
+              className="my-1 text-black font-semibold text-3xl sm:text-5xl"
+            >
+              BusineX Email
           </motion.div>
-          <motion.div
-            variants={item}
-            className="font-medium mx-1 mt-3 px-1 py-1  duration-150  text-black rounded-md"
-          >
-            BusineX Email is an HTML Email created using HTML and CSS.
+            <motion.div
+              variants={item}
+              className="font-medium mx-1 mt-3 px-1 py-1  duration-150  text-black rounded-md"
+            >
+              BusineX Email is an HTML Email created using HTML and CSS.
           </motion.div>
+          </div>
+          <div></div>
         </div>
 
         <motion.div

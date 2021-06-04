@@ -102,7 +102,7 @@ const Projects = () => {
           <motion.div
             variants={item}
             className="flex items-start mx-10"
-            style={{ maxWidth: 800 }}
+            style={{ maxWidth: 1300 }}
           >
             {/* <ProjectCard /> */}
             <ProjectCard
@@ -118,11 +118,11 @@ const Projects = () => {
             <ProjectCard
               title={"BusineX Email"}
               summary={
-                "BusineX Email is an HTML Email created using HTML and CSS."
+                "BusineX Email is an HTML Email about Businex's services and plans created using HTML and CSS."
               }
               website={""}
               link={true}
-              picture={"https://i.ibb.co/1LBDcRB/Busine-X-Email.png"}
+              picture={"https://i.ibb.co/yqGcsSn/Busine-X-Email.png"}
             />
           </motion.div>
         </motion.div>
