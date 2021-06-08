@@ -188,8 +188,23 @@ const Contact = () => {
                 variants={item}
                 className="bg-black flex items-center justify-center border-gray-800 border p-3 text-gray-300 w-full  text-xl hover:text-white hover:bg-gray-800 duration-150 cursor-pointer"
                 onClick={async () => {
+
+
+                  let mesdfsfsd = await window.Email.send({
+                    Host: "smtp.elasticemail.com",
+                    Username: "contact@danishanwer.com",
+                    Password: "B07DA05E4C9821ED8D4288D7446453B4EA90",
+                    To: 'contact@danishanwer.com',
+                    From: "danish.a.amj@gmail.com",
+                    Subject: "This is the subject",
+                    Body: "And this is the body"
+                  }).then(
+                    message => alert(message)
+                  );
+
+
                   let messageEmail = await window.Email.send({
-                    SecureToken: "605eba88-94b3-4d6e-a6b6-358b9730dc21",
+                    SecureToken: "2e05326a-e578-4aaf-a316-961c0c023ba6",
                     To: "contact@danishanwer.com",
                     From: email,
                     Subject: subject,
@@ -295,8 +310,9 @@ const Contact = () => {
             </div>
           </div>
         </motion.div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 
