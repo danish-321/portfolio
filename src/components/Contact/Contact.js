@@ -6,9 +6,7 @@ const Contact = () => {
   const [email, setEmail] = useState();
   const [subject, setSubject] = useState();
   const [message, setMessage] = useState();
-
   const [emailSent, setEmailSent] = useState(false);
-
   const [subjectRequired, setSubjectRequired] = useState(false);
   const [fromRequired, setFromRequired] = useState(false);
 
@@ -77,6 +75,35 @@ const Contact = () => {
     if (window.innerHeight < 600)
       if (scrollY > 600 - window.innerHeight + 800 + 1000) setShowContact(true);
   };
+
+  const handleSubmit = (event) => {
+    const templateId = 'template_id';
+    sendFeedback(templateId, {
+      message: subject + " " + message,
+      from_name: name,
+      from_name: email
+    })
+  }
+
+  const sendFeedback = (templateId, variables) => {
+    window.emailjs.send(
+      'service_mz76wie', 'template_9dihcm9',
+      variables
+    ).then(res => {
+
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setEmailSent(true);
+      setTimeout(() => {
+        setEmailSent(false);
+      }, 1000);
+
+    })
+      // Handle errors here however you like, or use a React error boundary
+      .catch()
+  }
 
   return (
     <div id="contact" style={{ minHeight: 800 }}>
@@ -187,55 +214,8 @@ const Contact = () => {
               <motion.div
                 variants={item}
                 className="bg-black flex items-center justify-center border-gray-800 border p-3 text-gray-300 w-full  text-xl hover:text-white hover:bg-gray-800 duration-150 cursor-pointer"
-                onClick={async () => {
-
-
-                  let mesdfsfsd = await window.Email.send({
-                    Host: "smtp.elasticemail.com",
-                    Username: "contact@danishanwer.com",
-                    Password: "B07DA05E4C9821ED8D4288D7446453B4EA90",
-                    To: 'contact@danishanwer.com',
-                    From: "danish.a.amj@gmail.com",
-                    Subject: "This is the subject",
-                    Body: "And this is the body"
-                  }).then(
-                    message => alert(message)
-                  );
-
-
-                  let messageEmail = await window.Email.send({
-                    SecureToken: "2e05326a-e578-4aaf-a316-961c0c023ba6",
-                    To: "contact@danishanwer.com",
-                    From: email,
-                    Subject: subject,
-                    Body: message + " " + name,
-                  });
-
-                  if (messageEmail == "'From' property is required")
-                    setFromRequired(true);
-
-                  if (messageEmail == "'Subject' property is required")
-                    setSubjectRequired(true);
-
-                  if (messageEmail.substring(0, 7) == "Mailbox") {
-                    setFromRequired(true);
-                    setEmail("");
-                  }
-
-                  if (messageEmail.substring(0, 3) == "The")
-                    setFromRequired(true);
-                  setEmail("");
-
-                  if (messageEmail == "OK") {
-                    setName("");
-                    setEmail("");
-                    setSubject("");
-                    setMessage("");
-                    setEmailSent(true);
-                    setTimeout(() => {
-                      setEmailSent(false);
-                    }, 1000);
-                  }
+                onClick={() => {
+                  handleSubmit()
                 }}
               >
                 Submit

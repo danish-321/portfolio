@@ -65,8 +65,11 @@ const Projects = () => {
   return (
     <div
       id="portfolio"
-      className="h-screen flex flex-col items-center justify-evenly"
-      style={{ backgroundColor: "#E7E7E8", minHeight: 1000 }}
+      className="flex flex-col items-center justify-evenly"
+      style={{
+        backgroundColor: "#E7E7E8", 
+        minHeight: 1000, maxHeight: 'max-content'
+    }}
     >
       {showProjects && (
         <motion.div
@@ -74,7 +77,7 @@ const Projects = () => {
           initial="hidden"
           animate="show"
           exit="exit"
-          className="flex flex-col  justify-evenly h-screen"
+          className="flex flex-col justify-evenly"
         >
           <div className="flex flex-col items-center justify-center">
             <motion.div
@@ -91,7 +94,7 @@ const Projects = () => {
             </motion.div>
             <motion.div
               variants={item}
-              className="font-medium  mx-1 mt-3 px-1 py-1  duration-150  text-black rounded-md"
+              className="font-medium  mx-1 mt-3 px-1 py-1  duration-150 text-black rounded-md"
             >
               Here you can find some of the projects that I created recently
             </motion.div>
@@ -99,8 +102,7 @@ const Projects = () => {
 
           <motion.div
             variants={item}
-            className="flex items-start mx-10"
-            style={{ maxWidth: 1300 }}
+            className="flex flex-wrap justify-center -backdrop-hue-rotate-15 items-start mx-10"
           >
             {/* <ProjectCard /> */}
             <ProjectCard
@@ -110,6 +112,16 @@ const Projects = () => {
               }
               website={"https://todoser.net/"}
               picture={"https://i.ibb.co/5j81L5K/todo-screenshot.png"}
+            />
+
+            {/* <ProjectCard /> */}
+            <ProjectCard
+              title={"Scorptec"}
+              summary={
+                "Scorptec is an eCommerce website with an online store that uses stripe payment processing. Made using React, Firebase, and Stripe, etc."
+              }
+              website={"https://scorptec.ca"}
+              picture={"https://i.ibb.co/3cRBJrd/scorptec-screenshot.jpg"}
             />
 
             {/* <ProjectCard /> */}
