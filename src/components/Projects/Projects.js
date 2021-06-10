@@ -118,7 +118,7 @@ const Projects = () => {
             <ProjectCard
               title={"Scorptec"}
               summary={
-                "Scorptec is an eCommerce website with an online store that uses stripe payment processing. Made using React, Firebase, and Stripe, etc."
+                "Scorptec is an eCommerce website with an online store that uses stripe payment processing. Made using React, Firebase, Stripe, etc."
               }
               website={"https://scorptec.ca"}
               picture={"https://i.ibb.co/3cRBJrd/scorptec-screenshot.jpg"}
