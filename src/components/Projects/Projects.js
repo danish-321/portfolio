@@ -68,7 +68,9 @@ const Projects = () => {
       className="flex flex-col items-center justify-evenly"
       style={{
         backgroundColor: "#E7E7E8", 
-        minHeight: 1000, maxHeight: 'max-content'
+        minHeight: 1200, maxHeight: 'max-content',
+        paddingTop: 60,
+        paddingBottom: 20
     }}
     >
       {showProjects && (
@@ -94,7 +96,7 @@ const Projects = () => {
             </motion.div>
             <motion.div
               variants={item}
-              className="font-medium  mx-1 mt-3 px-1 py-1  duration-150 text-black rounded-md"
+              className="font-medium  m-10  mt-3 py-1  duration-150 text-black rounded-md"
             >
               Here you can find some of the projects that I created recently
             </motion.div>
@@ -132,7 +134,7 @@ const Projects = () => {
               }
               website={""}
               link={true}
-              picture={"https://i.ibb.co/yqGcsSn/Busine-X-Email.png"}
+              picture={"https://i.ibb.co/mvP82ZW/Busine-X-Email.png"}
             />
           </motion.div>
         </motion.div>

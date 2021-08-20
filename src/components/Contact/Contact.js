@@ -113,8 +113,8 @@ const Contact = () => {
           initial="hidden"
           animate="show"
           exit="exit"
-          className="h-screen flex flex-col items-center justify-evenly bg-black"
-          style={{ minHeight: 800 }}
+          className="p-10 h-screen flex flex-col items-center justify-evenly bg-black"
+          style={{ minHeight: 1000, maxHeight:  'max-content'}}
         >
           <div className="mt-20 flex flex-col items-center justify-center">
             <motion.div
@@ -139,7 +139,7 @@ const Contact = () => {
 
           <div className="flex flex-col md:flex-row w-full justify-evenly items-center">
             <div
-              className="w-full px-16 pt-16 pb-10  shadow-lg"
+              className="w-full px-3 md:pl-16 md:pr-16 pt-16 pb-10  shadow-lg"
               style={{ maxWidth: 800 }}
             >
               <motion.div
@@ -207,6 +207,7 @@ const Contact = () => {
                   variants={item}
                   className="outline-none text-lg text-white bg-black w-full"
                   rows="3"
+                  style={{maxHeight:200}}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
@@ -260,8 +261,8 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className=" shadow-lg float-right flex md:flex-col items-start md:w-80 md:mr-5 w-full justify-evenly">
-              <div className="my-10">
+            <div className="px-3 sm:px-5 md:px-0  shadow-lg float-right flex md:flex-col items-start md:w-80 md:mr-5 w-full justify-between">
+              <div className="my-10 ml-1">
                 <motion.div
                   variants={item}
                   className="font-bold text-sm uppercase text-white tracking-widest my-3"
@@ -275,7 +276,7 @@ const Contact = () => {
                   contact@danishanwer.com
                 </motion.div>
               </div>
-              <div className="my-10">
+              <div className="my-10 mr-3">
                 <motion.div
                   variants={item}
                   className="font-bold text-sm uppercase text-white tracking-widest my-3"
